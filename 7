@@ -1,0 +1,10 @@
+sentence = input()
+
+words = sentence.split()
+
+short=[]
+
+for word in words:
+    short.append(len(word))
+
+print(min(short))
