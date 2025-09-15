@@ -1,0 +1,13 @@
+text = input()
+count = 1
+max_count = 0
+last_i = ''
+for i in text:
+    if i==last_i:
+        count += 1
+    else:
+        count = 1
+        last_i = i
+    if count > max_count:
+         max_count = count
+print(max_count)
