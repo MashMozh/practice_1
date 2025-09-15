@@ -1,0 +1,16 @@
+def brackets(x):
+    right_text = 0
+    for i in range(len(text)):
+        if text[i] == '(':
+            right_text += 1
+        elif text[i] == ')':
+            right_text -= 1
+            if  right_text < 0:
+               return False
+    return right_text == 0
+
+text = input()
+if brackets(text):
+    print('Скобки расставлены верно.')
+else:
+    print('Скобки расставлены неверно.')
