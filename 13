@@ -1,0 +1,20 @@
+def lucky_ticket(s):
+    if len(str(s))%2 != 0:
+        return False
+    s = str(s)
+    half = len(s) // 2
+    x = s[:half]
+    y = s[half:]
+    sum_digits1 = sum(int(digit) for digit in str(x))
+    sum_digits2 = sum(int(digit) for digit in str(y))
+    return sum_digits1 == sum_digits2
+
+count=0
+
+while True:
+    ticket = int(input())
+    count += 1
+    if lucky_ticket(ticket):
+        print('Порядковый номер счастливого билета:', count )
+        break
+        
