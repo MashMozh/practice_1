@@ -1,0 +1,16 @@
+import keyword
+s =input()
+a = s[0]
+def check_word(x):
+    if keyword.iskeyword(x):
+        return False
+    if not (a.isalpha() or a == '_'):
+        return False
+    for letter in x[1:]:
+        if not (letter.isalpha() or letter == '_'or letter.isdigit()):
+            return False
+    return True
+if check_word(s):
+    print('Строка может быть именем в языке Python')
+else:
+    print('Строка не может быть именем в языке Python')
