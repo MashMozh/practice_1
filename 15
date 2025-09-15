@@ -1,0 +1,30 @@
+number = input('Введите четырехзначное число: ')
+print('\n'*25)
+
+def bulls(x):
+    count = 0
+    for i in range(len(x)):
+        if x[i] == number[i]:
+            count +=1
+    print('Быков:', count)
+def cows(x):
+    count = 0
+    for i in range(len(x)):
+        if number[i] != x[i] and number.find(x[i]) != -1:
+            count += 1
+    print('Коров:', count)
+
+max_turns = 10
+turns = 0
+
+while turns < max_turns:
+    turn = input('Введите четырехзначное число: ')
+    bulls(turn)
+    cows(turn)
+    if turn == number:
+        print('Победа!')
+        break
+    else:
+        turns += 1
+else:
+    print('Проигрыш. Превышено количество попыток.')
