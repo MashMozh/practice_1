@@ -1,0 +1,25 @@
+line1 = input()
+line2 = input()
+line3 = input()
+
+line1.lower()
+line2.lower()
+line3.lower()
+
+set1 = set(line1)
+set2 = set(line2)
+set3 = set(line3)
+
+letters=[]
+
+for i in set1:
+    if i not in set2 and i not in set3:
+        letters.append(i)
+for i in set2:
+    if i not in set1 and i not in set3:
+        letters.append(i)
+for i in set3:
+    if i not in set2 and i not in set1:
+        letters.append(i)
+
+print(letters)
