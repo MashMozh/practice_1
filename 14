@@ -1,0 +1,40 @@
+clue = input('Введите подсказку: ')
+word = input('Введите слово: ').lower()
+print('\n'*25)
+
+guessed = ['*' for _ in word]
+max_attempt = 10
+attempt = 0
+print(clue)
+print(''.join(guessed))
+
+while attempt < max_attempt:
+    choice = input('Буква или слово (0 - буква, 1 - слово)? ')
+
+    if choice == '0':
+        letter = input('Введите букву: ').lower()
+        if letter in word:
+            for i in range(len(word)):
+                if word[i] == letter:
+                    guessed[i] = letter
+
+    elif choice == '1':
+        guess = input('Введите слово: ').lower()
+        if guess == word:
+            print('Победа!')
+            break
+        else:
+            print('Неверно!')
+
+    else:
+        print('Некорректный ввод, введите 0 или 1.')
+        continue
+
+    print(''.join(guessed))
+    attempt += 1
+
+    if ''.join(guessed) == word:
+        print('Победа!')
+        break
+else:
+    print('Проигрыш!')
