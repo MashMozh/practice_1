@@ -1,6 +1,6 @@
 def winner(cities):
     city_list = cities.split()
-    if len(city_list)%2==0:
+    if len(city_list)%2 == 0:
         return 'Выиграл второй игрок(последним назвал город)'
     else:
         return 'Выиграл первый игрок(последним назвал город)'
