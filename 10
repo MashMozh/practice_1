@@ -4,6 +4,6 @@ first_word = words[0]
 letters1 = set(first_word)
 result=[]
 for word in words:
-    if first_word.lower()!=word.lower() and letters1.isdisjoint(word):
+    if first_word.lower() != word.lower() and letters1.isdisjoint(word):
         result.append(word)
 print(' '.join(result))
