@@ -1,9 +1,10 @@
 def winner(cities):
     city_list = cities.split()
-    if len(city_list)%2 == 0:
+    if len(city_list) % 2 == 0:
         return 'Выиграл второй игрок(последним назвал город)'
     else:
         return 'Выиграл первый игрок(последним назвал город)'
+
 
 def rules(cities):
     city_list = cities.split()
@@ -12,11 +13,12 @@ def rules(cities):
         now_city = city_list[i].lower().strip()
 
         if pre_city[-1] != now_city[0]:
-            if i%2 == 0:
+            if i % 2 == 0:
                 return 'Выиграл первый игрок, т.к. первый нарушил правило'
             else:
                 return 'Выиграл второй игрок, т.к. второй нарушил правило'
     return 'Правила соблюдены'
+
 
 city = input()
 checking = rules(city)
